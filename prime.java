@@ -1,19 +1,26 @@
-public class prime {
-
-  public static void main(String[] args) {
-
-    int num = 29;
-    boolean flag = false;
-    for (int i = 2; i <= num / 2; ++i) {
-      if (num % i == 0) {
-        flag = true;
-        break;
-      }
-    }
-
-    if (!flag)
-      System.out.println(num + " is a prime number.");
-    else
-      System.out.println(num + " is not a prime number.");
-  }
+import java.util.*;
+class Eleven extends Thread{ 
+	public void run(){
+		Scanner s = new Scanner(System.in);
+		int i,n,k=0;
+		System.out.print("Enter the Number:");
+		n = s.nextInt();
+		for(i=2;i<n;i++){
+		if(n%i==0){
+		k++;
+		}
+		}
+		if(k!=0){
+		System.out.println(n+" is NOT a Prime");
+		}
+		else{
+		System.out.println(n+" is a Prime");
+		}
+	}
+}
+class prime{
+	public static void main(String arg[]){
+		Eleven m = new Eleven();
+		m.start();
+} 
 }
